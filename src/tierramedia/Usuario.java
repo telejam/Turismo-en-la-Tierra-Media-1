@@ -1,5 +1,5 @@
 
-package trabajo;
+package tierramedia;
 
 import java.util.Objects;
 
