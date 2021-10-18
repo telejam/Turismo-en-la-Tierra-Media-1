@@ -1,7 +1,6 @@
-package trabajo;
+package tierramedia;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,12 +18,13 @@ public void agregarUsuario(Usuario usuario) {
 		return this.usuarios;
 	}
 	
-	public List<Usuario> leerUsuarios(String archivo) {
+	public List<Usuario> leerUsuarios() {
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 		FileReader fr = null;
 		BufferedReader br = null;
 		try {
-			fr = new FileReader(new File(archivo));
+			fr = new FileReader("archivos/in/usuarios.csv");
+			
 			br = new BufferedReader(fr);
 			String linea = null;
 			while ((linea = br.readLine()) != null) {
@@ -47,9 +47,10 @@ public void agregarUsuario(Usuario usuario) {
 		usuarioLista = new Usuario(resultado[0], Integer.parseInt(resultado[1]), Integer.parseInt(resultado[2]));
 		
 		return usuarioLista;
-	}	
+	}
 
-	//probando para githug 
 	
 	
+	
+	//hernan probando
 }
