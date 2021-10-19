@@ -6,7 +6,7 @@ public class Promotor {
 
 	PaqueteAtracciones paqueteAtracciones = new PaqueteAtracciones();
 	ListadoUsuarios listadoUsuarios = new ListadoUsuarios();
-	PaquetePromociones paquetePromociones = new PaquetePromociones();
+	PaquetePromociones paquetePromociones = new PaquetePromociones(paqueteAtracciones);
 	Itinerario itinerario;
 
 	public void iniciar() {
@@ -24,12 +24,12 @@ public class Promotor {
 			}
 
 			paqueteAtracciones.ordenarPorPrecio();
-			for (Atraccion atraccion : PaqueteAtracciones.atracciones) {
+			for (Atraccion atraccion : paqueteAtracciones.atracciones) {
 				procesar(atraccion, usuario);
 			}
 
 			paqueteAtracciones.ordenarPorTiempo();
-			for (Atraccion atraccion : PaqueteAtracciones.atracciones) {
+			for (Atraccion atraccion : paqueteAtracciones.atracciones) {
 				procesar(atraccion, usuario);
 			}
 
@@ -63,23 +63,23 @@ public class Promotor {
 						Scanner entrada = new Scanner(System.in);
 						String respuesta = "";
 						
-						while (respuesta.toUpperCase() != "S" || respuesta.toUpperCase() != "N") {
-							System.out.println("¿Acepta sugerencia? Ingrese S o N");
-							respuesta = entrada.nextLine();
+						while (!respuesta.equals("S") && !respuesta.equals("N")) {
+							System.out.println("\n¿Acepta sugerencia? Ingrese S o N");
+							respuesta = (entrada.nextLine()).toUpperCase();
 						}
 
 						//		si acepta Sugerencia agregar Al Itinerario
-						if (respuesta == "S") {
+						if (respuesta.equals("S")) {
 							System.out.println("¡Sugerencia Aceptada!");
 							
 						}else {
 							System.out.println("¡Sugerencia Rechazada!");
 						}
+						System.out.println("\n-------------------------------------------------------------------\n");
 					}
 				}
 			}
 		}
-		System.out.println("\n-------------------------------------------------------------------\n");
 	}
 
 }
