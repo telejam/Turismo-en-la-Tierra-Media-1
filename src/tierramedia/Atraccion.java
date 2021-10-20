@@ -10,19 +10,15 @@ public class Atraccion {
 	public double obtenerCosto() {
 		return this.costoDeVisita;
 	}
-	
+    public double obtenerDuracion() {
+		return this.tiempoDeVisita;
+	} 
+    public String obtenerNombre() {
+		return this.nombre;
+	}
 	public boolean hayCupo() {
 		return this.cupoDiarioDePersonas>0;
 	}
-	
-	public double obtenerDuracion() {
-		return this.tiempoDeVisita;
-	} 
-	
-	public String getNombre() {
-		return this.nombre;
-	}
-
     public int restarCupo() {
         if(this.hayCupo()){
             this.cupoDiarioDePersonas -= 1;
