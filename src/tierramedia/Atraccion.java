@@ -1,10 +1,10 @@
 package tierramedia;
 
 public class Atraccion {
-	String nombre;
-	double costoDeVisita;
-	double tiempoDeVisita;
-	int cupoDiarioDePersonas;
+	private String nombre;
+	private double costoDeVisita;
+	private double tiempoDeVisita;
+	private int cupoDiarioDePersonas;
 	
 	
 	public double obtenerCosto() {
