@@ -7,28 +7,28 @@ public class Atraccion {
 	int cupoDiarioDePersonas;
 	
 	
-	public double obtenerCosto(Promocion promo) {
-		return costoDeVisita - promo.preciodePromo;
+	public double obtenerCosto() {
+		return this.costoDeVisita;
 	}
 	
 	public boolean hayCupo() {
-		boolean cupo = false;
-		if(cupoDiarioDePersonas>0) {
-			cupo = true;
-		}
-		return cupo;
-	}\\
+		return this.cupoDiarioDePersonas>0;
+	}
 	
 	public double obtenerDuracion() {
-		return tiempoDeVisita;
+		return this.tiempoDeVisita;
 	} 
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 
-    public boolean comprar() {
-        if()
+    public boolean restarCupo() {
+        if(this.hayCupo()){
+            this.cupoDiarioDePersonas -= 1;
+        } else {
+            System.out.println("Operación no permitida por falta de cupo");
+        }
     }
 
 }
