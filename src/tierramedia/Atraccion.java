@@ -23,12 +23,14 @@ public class Atraccion {
 		return this.nombre;
 	}
 
-    public boolean restarCupo() {
+    public int restarCupo() {
         if(this.hayCupo()){
             this.cupoDiarioDePersonas -= 1;
         } else {
             System.out.println("Operación no permitida por falta de cupo");
         }
+
+        return this.cupoDiarioDePersonas;
     }
 
 }
