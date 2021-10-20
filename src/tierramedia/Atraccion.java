@@ -16,6 +16,13 @@ public class Atraccion {
     public String obtenerNombre() {
 		return this.nombre;
 	}
+
+    public List<Atraccion> obtenerContenido(){
+        List<Atraccion> contenido = new ArrayList<Atraccion>();
+        contenido.add(this);
+        return contenido;
+    }
+
 	public boolean hayCupo() {
 		return this.cupoDiarioDePersonas>0;
 	}
