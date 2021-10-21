@@ -1,5 +1,8 @@
 package tierramedia;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Atraccion {
 	private String nombre;
 	private double costoDeVisita;
