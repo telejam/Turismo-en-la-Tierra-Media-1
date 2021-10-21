@@ -1,5 +1,6 @@
 package tierramedia;
 
+import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,17 +17,17 @@ public class Atraccion {
 		this.cupoDiarioDePersonas = limit;
 	}
 	
-	public double obtenerCosto() {
+	public double getCosto() {
 		return this.costoDeVisita;
 	}
-    public double obtenerDuracion() {
+    public double getDuracion() {
 		return this.tiempoDeVisita;
 	} 
-    public String obtenerNombre() {
+    public String getNombre() {
 		return this.nombre;
 	}
 
-    public List<Atraccion> obtenerContenido(){
+    public List<Atraccion> getContenido(){
         List<Atraccion> contenido = new ArrayList<Atraccion>();
         contenido.add(this);
         return contenido;
@@ -39,10 +40,16 @@ public class Atraccion {
         if(this.hayCupo()){
             this.cupoDiarioDePersonas -= 1;
         } else {
-            System.out.println("OperaciÃ³n no permitida por falta de cupo");
+            System.out.println("Operación no permitida por falta de cupo");
         }
 
         return this.cupoDiarioDePersonas;
     }
+    
+	@Override
+	public String toString() {
+		return "Atracción [nombre= " + this.nombre + ", Precio= " + this.costoDeVisita + ", Duración= " + this.tiempoDeVisita + ", Cupo Disponible= " + this.cupoDiarioDePersonas + "]\n";
+	}
+    
 
 }

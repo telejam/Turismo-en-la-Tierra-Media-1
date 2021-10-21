@@ -1,14 +1,16 @@
 package tierramedia;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class PaqueteAtracciones {
     private List<Atraccion> Atracciones =  new ArrayList<Atraccion>();
+    
+    public PaqueteAtracciones() {}
     
     public Atraccion linea2atraccion(String linea) {
     	String[] elemento = linea.split(","); //name, price, time, limit
@@ -43,5 +45,9 @@ public class PaqueteAtracciones {
     		}
     	}
     	
+    }
+    
+    public void Ordenar() {
+    	Collections.sort(Atracciones, new CompararAtracciones());
     }
 }
