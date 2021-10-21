@@ -9,6 +9,12 @@ public class Atraccion {
 	private double tiempoDeVisita;
 	private int cupoDiarioDePersonas;
 	
+	public Atraccion(String name, double price, double time, int limit) {
+		this.nombre = name;
+		this.costoDeVisita = price;
+		this.tiempoDeVisita = time;
+		this.cupoDiarioDePersonas = limit;
+	}
 	
 	public double obtenerCosto() {
 		return this.costoDeVisita;
