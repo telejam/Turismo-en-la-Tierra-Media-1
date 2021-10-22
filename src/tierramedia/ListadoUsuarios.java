@@ -49,8 +49,4 @@ public void agregarUsuario(Usuario usuario) {
 		return usuarioLista;
 	}
 
-	
-	
-	
-	//hernan probando
 }

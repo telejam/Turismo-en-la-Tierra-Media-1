@@ -7,7 +7,7 @@ public class Usuario {
 	private String nombre;
 	private double presupuesto;
 	private double tiempoDisponible;
-
+	
 	public Usuario(String nombre, double presupuesto, double tiempoDisponible) {
 
 		this.nombre = nombre;
@@ -15,14 +15,13 @@ public class Usuario {
 		this.tiempoDisponible = tiempoDisponible;
 	}
 
-	// pendiente
-	public boolean verificarUsuarioTiempo() {
-		return true;
+	
+	public  double reducirPresupuesto() {
+		this.presupuesto--;
 	}
 
-	// pendiente
-	public boolean verificarUsuarioPresupuesto() {
-		return true;
+	public void reducirTiempo() {
+		this.tiempoDisponible--;
 	}
 
 	public String getNombre() {
@@ -39,7 +38,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombre + ", presupuesto=" + presupuesto + ", tiempoDisponible=" + tiempoDisponible
+		return "Usuario [nombre= " + nombre + ", presupuesto= " + presupuesto + ", tiempoDisponible= " + tiempoDisponible
 				+ "]\n";
 	}
 
