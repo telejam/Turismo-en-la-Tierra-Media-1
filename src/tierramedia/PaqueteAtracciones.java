@@ -12,6 +12,10 @@ public class PaqueteAtracciones {
     
     public PaqueteAtracciones() {}
     
+    public List<Atraccion> getAtracciones() {
+    	return this.Atracciones;
+    }
+    
     public Atraccion linea2atraccion(String linea) {
     	String[] elemento = linea.split(","); //name, price, time, limit
     	Atraccion aux = new Atraccion(elemento[0], Integer.parseInt(elemento[1]),Double.parseDouble(elemento[2]),Integer.parseInt(elemento[3]));
@@ -27,7 +31,7 @@ public class PaqueteAtracciones {
     		br = new BufferedReader(fr);
     		String linea = br.readLine();
     		while((linea != null)) {
-    			System.out.println(linea);
+    			//System.out.println(linea);
     			Atracciones.add(linea2atraccion(linea));
     			linea = br.readLine();
     		}
@@ -49,5 +53,13 @@ public class PaqueteAtracciones {
     
     public void Ordenar() {
     	Collections.sort(Atracciones, new CompararAtracciones());
+    }
+    
+    public void Listar() {
+    	 for (int i=0;i<Atracciones.size();i++) {
+   	        
+   	        System.out.println(Atracciones.get(i));
+   	     }
+
     }
 }

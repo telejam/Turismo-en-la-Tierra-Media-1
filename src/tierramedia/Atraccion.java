@@ -22,6 +22,9 @@ public class Atraccion {
     public double getDuracion() {
 		return this.tiempoDeVisita;
 	} 
+    public double getCupo() {
+  		return this.cupoDiarioDePersonas;
+  	}
     public String getNombre() {
 		return this.nombre;
 	}
@@ -47,7 +50,7 @@ public class Atraccion {
     
 	@Override
 	public String toString() {
-		return "Atracción [nombre= " + this.nombre + ", Precio= " + this.costoDeVisita + ", Duración= " + this.tiempoDeVisita + ", Cupo Disponible= " + this.cupoDiarioDePersonas + "]\n";
+		return "Atracción: " + this.nombre + "\nPrecio: " + this.costoDeVisita + "\nDuración: " + this.tiempoDeVisita;
 	}
     
 
