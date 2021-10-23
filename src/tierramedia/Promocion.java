@@ -31,12 +31,13 @@ public abstract class Promocion implements Ofertable {
 		}
 		return cupo;
 	}
-	public Double obtenerDuracion() {
+	public double obtenerDuracion() {
 
 		double sumaTiempos = 0;
 		for (Atraccion atraccion : this.atracciones) {
 			sumaTiempos += atraccion.obtenerDuracion();
 		}
+		return sumaTiempos;
 	}
 	public List<Atraccion> obtenerContenido() {
 

@@ -11,7 +11,7 @@ public class PaquetePromociones {
 	private List<Promocion> promociones;
 	
 	public PaquetePromociones(List<Atraccion> lista) {
-		cargarPromociones(paqueteAtracciones);
+		cargarPromociones(lista);
 		
 	}
 	public void cargarPromociones(List<Atraccion> lista) { 
@@ -49,26 +49,16 @@ public class PaquetePromociones {
 				if(cortarString[1].equals("%")) {
 				
 
-			           for(Atraccion atraccion :lista) {
-						if(atraccion.getNombre().equals(unaAtraccion)) {
-							pasarAtracciones.add(atraccion);
-						}
-					}
 							
-				promociones.add(new PromocionPorcentual(cortarString[0],pasarAtracciones,Integer.parseInt(cortarString[3])));
+				promociones.add(new PromocionPorcentual(cortarString[0],pasarAtracciones, Double.parseDouble(cortarString[3])));
 				
 				}
 				if(cortarString[1].equals("$")) {
 				
-				           for(Atraccion atraccion :lista) {
-							if(atraccion.getNombre().equals(unaAtraccion)) {
-								pasarAtracciones.add(atraccion);
-							}
-						}
-						
+				         
 					
 							
-					promociones.add(new PromocionAbsoluta(cortarString[0],pasarAtracciones,Integer.parseInt(cortarString[3])) );
+					promociones.add(new PromocionAbsoluta(cortarString[0],pasarAtracciones, Double.parseDouble(cortarString[3])) );
 				
 				}
 				if(cortarString[1].equals("x")) {
