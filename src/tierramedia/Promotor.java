@@ -6,51 +6,39 @@ public class Promotor {
 
 	PaqueteAtracciones paqueteAtracciones = new PaqueteAtracciones();
 	ListadoUsuarios listadoUsuarios = new ListadoUsuarios();
-	PaquetePromociones paquetePromociones = new PaquetePromociones(paqueteAtracciones);
+	PaquetePromociones paquetePromociones = new PaquetePromociones(paqueteAtracciones.getAtracciones());
 	Itinerario itinerario;
 
 	public void iniciar() {
 		// El Promotor recorre la lista de usuarios y para cada uno crea un Itinerario y
 		// le asigna el Usuario.
 		// Evalua lo que le puede sugerir.
-		for (Usuario usuario : listadoUsuarios.usuarios) {
+		for (Usuario usuario : listadoUsuarios.getUsuarios()) {
 
-			itinerario = new Itinerario(usuario.getNombre());
+			itinerario = new Itinerario(usuario);
 
 			System.out.println("Nombre de visitante: " + usuario.getNombre().toUpperCase() + "\n");
 
-			for (Promocion promocion : paquetePromociones.promociones) {
+			paquetePromociones.ordenar();
+			for (Promocion promocion : paquetePromociones.getPromociones()) {
 				procesar(promocion, usuario);
 			}
 
-			paqueteAtracciones.ordenarPorPrecio();
-			for (Atraccion atraccion : paqueteAtracciones.atracciones) {
+			paqueteAtracciones.ordenar();
+			for (Atraccion atraccion : paqueteAtracciones.getAtracciones()) {
 				procesar(atraccion, usuario);
 			}
-
-			paqueteAtracciones.ordenarPorTiempo();
-			for (Atraccion atraccion : paqueteAtracciones.atracciones) {
-				procesar(atraccion, usuario);
-			}
+			
+			System.out.println(itinerario);
+			itinerario.generarArchivo();
 
 		}
 	}
 
-	/*
-	 * Por cada posible Promocion/Atraccion, verifica en el Itinerario si ya está
-	 * cargada (decirle eso es tarea del Itinerario). Si no está y el Usuario la
-	 * acepta, agrega la Atraccion en la lista del Itinerario (setter?) Suma al
-	 * costo de la visita ya acumulado el costo de esa Atraccion (o atracciones si
-	 * es una promo). Ahí Itinerario debería tener un método para hacer eso que
-	 * pueda llamar el Promotor (acumularCosto por ej.) Algo parecido para el tiempo
-	 * de visita. Cuando ya no queda más para ofrecerle al Usuario, llama a los
-	 * métodos del Iterador para mostrar el recorrido y generar el archivo de ese
-	 * Usuario. Pasa al siguiente usuario y vuelta a empezar.
-	 */
 	private void procesar(Ofertable oferta, Usuario usuario) {
 
 		//		verificar Ya Cargada
-		if (!oferta.estaCargada()) {
+		if (!itinerario.estaCargada(oferta)) {
 			//		verificar Cupo
 			if (oferta.hayCupo()) {
 				//		verificar Usuario Presupuesto
@@ -71,6 +59,7 @@ public class Promotor {
 						//		si acepta Sugerencia agregar Al Itinerario
 						if (respuesta.equals("S")) {
 							System.out.println("¡Sugerencia Aceptada!");
+							itinerario.agregar(oferta);
 							
 						}else {
 							System.out.println("¡Sugerencia Rechazada!");
