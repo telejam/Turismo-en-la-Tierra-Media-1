@@ -2,6 +2,7 @@ package tierramedia;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,11 +10,11 @@ public class PaquetePromociones {
 
 	private List<Promocion> promociones;
 	
-	public PaquetePromociones(PaqueteAtracciones paqueteAtracciones) {
+	public PaquetePromociones(List<Atraccion> lista) {
 		cargarPromociones(paqueteAtracciones);
 		
 	}
-	public void cargarPromociones(PaqueteAtracciones paqueteAtracciones) { 
+	public void cargarPromociones(List<Atraccion> lista) { 
 
 
         ArrayList<Promocion> promociones = new ArrayList<Promocion>();
@@ -37,7 +38,7 @@ public class PaquetePromociones {
 			String [] listaAtracciones=cortarString[2].split("-");
 		       pasarAtracciones= new ArrayList<Atraccion>();
 			for(String unaAtraccion:listaAtracciones) {
-				for(Atraccion atraccion :paqueteAtracciones.atracciones) {
+				for(Atraccion atraccion :lista) {
 					if(atraccion.getNombre().equals(unaAtraccion)) {
 						pasarAtracciones.add(atraccion);
 					}
@@ -47,24 +48,37 @@ public class PaquetePromociones {
 				
 				if(cortarString[1].equals("%")) {
 				
+
+			           for(Atraccion atraccion :lista) {
+						if(atraccion.getNombre().equals(unaAtraccion)) {
+							pasarAtracciones.add(atraccion);
+						}
+					}
 							
-				promociones.add(new PromocionPorcentual(cortarString[0],pasarAtracciones,cortarString[3]));
+				promociones.add(new PromocionPorcentual(cortarString[0],pasarAtracciones,Integer.parseInt(cortarString[3])));
 				
 				}
 				if(cortarString[1].equals("$")) {
+				
+				           for(Atraccion atraccion :lista) {
+							if(atraccion.getNombre().equals(unaAtraccion)) {
+								pasarAtracciones.add(atraccion);
+							}
+						}
+						
 					
 							
-					promociones.add(new PromocionAbsoluta(,,) );
+					promociones.add(new PromocionAbsoluta(cortarString[0],pasarAtracciones,Integer.parseInt(cortarString[3])) );
 				
 				}
 				if(cortarString[1].equals("x")) {
-				
-				listaAPagar=pasarAtracciones;
-				
+					
 				String [] listaAtraccionesGratuitas=cortarString[3].split("-");
+				listaAPagar = new ArrayList<Atraccion>();
+				listaAPagar.addAll(pasarAtracciones);
 			      
 				for(String unaAtraccion:listaAtraccionesGratuitas) {
-					for(Atraccion atraccion :paqueteAtracciones.atracciones) {
+					for(Atraccion atraccion :lista) {
 						if(atraccion.getNombre().equals(unaAtraccion)) {
 							pasarAtracciones.add(atraccion);
 						}
@@ -94,9 +108,13 @@ public class PaquetePromociones {
 
 
 
+	 public void Ordenar() {
+	    	Collections.sort(promociones, new ComparadorOfertables());
+	    }
 
-
-
+	 public List<Promocion> getPromociones(){
+		 return promociones;
+	 }
 
 
 }	

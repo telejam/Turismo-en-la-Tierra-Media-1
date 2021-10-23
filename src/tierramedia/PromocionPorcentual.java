@@ -13,7 +13,11 @@ public class PromocionPorcentual extends Promocion  {
 	
 	public Double obtenerCosto() {
 		
-      for()
+		int sumaCostos = 0;
+		for(Atraccion x : ) {
+			sumaCostos += x.getCosto();
+			}
+		return (sumaCostos - montoPromo) * 100 / sumaCostos ;
 		
 		
 
