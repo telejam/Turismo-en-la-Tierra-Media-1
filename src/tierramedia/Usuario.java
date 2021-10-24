@@ -31,7 +31,7 @@ public class Usuario {
 		return presupuesto;
 	}
 
-	public double getTiempoDisponible() {
+	public double getTiempo() {
 		return tiempoDisponible;
 	}
 
