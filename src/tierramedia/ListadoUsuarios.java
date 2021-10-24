@@ -14,7 +14,7 @@ public class ListadoUsuarios {
 		cargarUsuarios();
 	}
 
-	public List<Usuario> getUsuario() {
+	public List<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
 
@@ -27,8 +27,8 @@ public class ListadoUsuarios {
 			String linea = null;
 			while ((linea = br.readLine()) != null) {
 				String[] resultado = linea.split(",");
-				Usuario usuario = new Usuario(resultado[0], Integer.parseInt(resultado[1]),
-						Integer.parseInt(resultado[2]));
+				Usuario usuario = new Usuario(resultado[0], Double.parseDouble(resultado[1]),
+						Double.parseDouble(resultado[2]));
 				usuarios.add(usuario);
 			}
 		} catch (FileNotFoundException e) {
