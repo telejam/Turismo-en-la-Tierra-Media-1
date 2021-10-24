@@ -65,6 +65,7 @@ public class Promotor {
 							System.out.println("¡Sugerencia Rechazada!");
 						}
 						System.out.println("\n-------------------------------------------------------------------\n");
+						entrada.close();
 					}
 				}
 			}
