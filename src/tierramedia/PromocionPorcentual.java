@@ -20,6 +20,7 @@ public class PromocionPorcentual extends Promocion  {
 
 		return precio-(precio*(porcentajeDeDescuento/100));
 	}
+	
 	public String toString() {
 		DecimalFormat f = new DecimalFormat("#.##");
 		String listaAtracciones = "";

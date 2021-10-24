@@ -98,7 +98,7 @@ public class PaquetePromociones {
 
 
 
-	 public void Ordenar() {
+	 public void ordenar() {
 	    	Collections.sort(promociones, new ComparadorOfertables());
 	    }
 
