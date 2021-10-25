@@ -17,10 +17,12 @@ public class Atraccion implements Ofertable{
 		this.cupoDiarioDePersonas = limit;
 	}
 	
+	@Override
 	public double obtenerCosto() {
 		return this.costoDeVisita;
 	}
 	
+	@Override
     public double obtenerDuracion() {
 		return this.tiempoDeVisita;
 	}
@@ -29,12 +31,14 @@ public class Atraccion implements Ofertable{
 		return this.nombre;
 	}
 
+	@Override
     public List<Atraccion> obtenerContenido(){
         List<Atraccion> contenido = new ArrayList<Atraccion>();
         contenido.add(this);
         return contenido;
     }
 
+	@Override
 	public boolean hayCupo() {
 		return this.cupoDiarioDePersonas>0;
 	}

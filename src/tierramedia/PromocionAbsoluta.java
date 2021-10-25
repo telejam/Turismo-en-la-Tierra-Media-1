@@ -12,10 +12,12 @@ public class PromocionAbsoluta extends Promocion {
 		this.precioFijo = precio;
 	}
 
+	@Override
 	public double obtenerCosto() {
 		return this.precioFijo;
 	}
 	
+	@Override
 	public String toString() {
 		DecimalFormat f = new DecimalFormat("#.##");
 		String listaAtracciones = "";

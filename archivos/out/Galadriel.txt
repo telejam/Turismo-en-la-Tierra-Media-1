@@ -1,0 +1,9 @@
+Itinerario de Galadriel
+
+ Rivendel 1.0 horas
+ Erebor 3.0 horas
+ Lothlorien 1.0 horas
+
+ Costo total: 59.0 monedas de oro
+
+ Tiempo total: 5.0 horas.

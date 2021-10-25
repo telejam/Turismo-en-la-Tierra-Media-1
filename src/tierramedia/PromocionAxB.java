@@ -11,6 +11,8 @@ public class PromocionAxB extends Promocion {
 		super(nombre, atracciones);
 		this.atraccionesAPagar = atraccionesAPagar;
 	}
+
+	@Override
 	public double obtenerCosto() {
 		double precio = 0;
 		for (Atraccion atraccion : atraccionesAPagar) {
@@ -19,6 +21,8 @@ public class PromocionAxB extends Promocion {
 
 		return precio;
 	}
+
+	@Override
 	public String toString() {
 		DecimalFormat f = new DecimalFormat("#.##");
 		String listaAtracciones = "";

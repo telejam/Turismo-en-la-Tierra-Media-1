@@ -11,7 +11,7 @@ public class PaqueteAtracciones {
     private List<Atraccion> Atracciones =  new ArrayList<Atraccion>();
     
     public PaqueteAtracciones() {
-    	this.cargarAtracciones();
+    	cargarAtracciones();
     }
     
     public List<Atraccion> getAtracciones() {
@@ -34,7 +34,7 @@ public class PaqueteAtracciones {
     		String linea = br.readLine();
     		while((linea != null)) {
     			//System.out.println(linea);
-    			this.Atracciones.add(linea2atraccion(linea));
+    			Atracciones.add(linea2atraccion(linea));
     			linea = br.readLine();
     		}
     	}

@@ -13,6 +13,7 @@ public abstract class Promocion implements Ofertable {
 		this.atracciones= atraccionesPromo;
 	}
 
+	@Override
 	public boolean hayCupo() {
 		boolean cupo = true;
 		for (Atraccion atraccion : this.atracciones) {
@@ -23,6 +24,7 @@ public abstract class Promocion implements Ofertable {
 		}
 		return cupo;
 	}
+	@Override
 	public double obtenerDuracion() {
 
 		double sumaTiempos = 0;
@@ -31,6 +33,7 @@ public abstract class Promocion implements Ofertable {
 		}
 		return sumaTiempos;
 	}
+	@Override
 	public List<Atraccion> obtenerContenido() {
 
           return atracciones;

@@ -12,6 +12,7 @@ public class PromocionPorcentual extends Promocion  {
 	    this. porcentajeDeDescuento=porcentaje;
 	}
 	
+	@Override
 	public double obtenerCosto() {
 		double precio = 0;
 		for (Atraccion atraccion : atracciones) {
@@ -21,6 +22,7 @@ public class PromocionPorcentual extends Promocion  {
 		return precio-(precio*(porcentajeDeDescuento/100));
 	}
 	
+	@Override
 	public String toString() {
 		DecimalFormat f = new DecimalFormat("#.##");
 		String listaAtracciones = "";

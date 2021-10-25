@@ -68,7 +68,7 @@ public class Promotor {
 							System.out.println("¡Sugerencia Rechazada!");
 						}
 						System.out.println("\n-------------------------------------------------------------------\n");
-						entrada.close();
+						//entrada.close(); //Si cierro el scanner me da error
 					}
 				}
 			}

@@ -7,9 +7,9 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Itinerario {
-	private ArrayList<Atraccion> atracciones;
-	private double costoDeVisita;
-	private double tiempoDeVisita;
+	private ArrayList<Atraccion> atracciones = new ArrayList<Atraccion>();
+	private double costoDeVisita = 0;
+	private double tiempoDeVisita = 0;
 	private Usuario usuario;
 
 	public Itinerario(Usuario usuario) {
