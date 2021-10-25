@@ -34,11 +34,4 @@ public class Usuario {
 	public double getTiempo() {
 		return tiempoDisponible;
 	}
-
-	@Override
-	public String toString() {
-		return "Usuario [nombre= " + nombre + ", presupuesto= " + presupuesto + ", tiempoDisponible= " + tiempoDisponible
-				+ "]\n";
-	}
-	
 }
