@@ -51,15 +51,7 @@ public class PaqueteAtracciones {
     	
     }
     
-    public void Ordenar() {
-    	Collections.sort(Atracciones, new CompararAtracciones());
-    }
-    
-    public void Listar() {
-    	 for (int i=0;i<Atracciones.size();i++) {
-   	        
-   	        System.out.println(Atracciones.get(i));
-   	     }
-
+    public void ordenar() {
+    	Collections.sort(Atracciones, new ComparadorOfertables());
     }
 }

@@ -1,9 +1,10 @@
 package tierramedia;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Atraccion {
+public class Atraccion implements Ofertable{
 	private String nombre;
 	private double costoDeVisita;
 	private double tiempoDeVisita;
@@ -16,20 +17,19 @@ public class Atraccion {
 		this.cupoDiarioDePersonas = limit;
 	}
 	
-	public double getCosto() {
+	public double obtenerCosto() {
 		return this.costoDeVisita;
 	}
-    public double getDuracion() {
+	
+    public double obtenerDuracion() {
 		return this.tiempoDeVisita;
-	} 
-    public double getCupo() {
-  		return this.cupoDiarioDePersonas;
-  	}
+	}
+    
     public String getNombre() {
 		return this.nombre;
 	}
 
-    public List<Atraccion> getContenido(){
+    public List<Atraccion> obtenerContenido(){
         List<Atraccion> contenido = new ArrayList<Atraccion>();
         contenido.add(this);
         return contenido;
@@ -38,6 +38,7 @@ public class Atraccion {
 	public boolean hayCupo() {
 		return this.cupoDiarioDePersonas>0;
 	}
+	
     public int restarCupo() {
         if(this.hayCupo()){
             this.cupoDiarioDePersonas -= 1;
@@ -50,8 +51,8 @@ public class Atraccion {
     
 	@Override
 	public String toString() {
-		return "Atracción: " + this.nombre + "\nPrecio: " + this.costoDeVisita + "\nDuración: " + this.tiempoDeVisita;
+		DecimalFormat f = new DecimalFormat("#.##");
+		return "Atracción: " + this.nombre + 
+				"\n-Duración: " + f.format(obtenerDuracion()) + " horas \n-Precio: " + f.format(obtenerCosto()) + " monedas de oro";
 	}
-    
-
 }

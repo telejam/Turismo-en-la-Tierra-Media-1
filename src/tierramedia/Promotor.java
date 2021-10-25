@@ -19,6 +19,9 @@ public class Promotor {
 
 			System.out.println("Nombre de visitante: " + usuario.getNombre().toUpperCase() + "\n");
 
+			//Las promociones y las atracciones no se mezclan por lo tanto 
+			//unirlas en una sola lista de ofertables no suma utilidad pero gasta más recursos.
+			//Por eso se procesan separadas.
 			paquetePromociones.ordenar();
 			for (Promocion promocion : paquetePromociones.getPromociones()) {
 				procesar(promocion, usuario);
