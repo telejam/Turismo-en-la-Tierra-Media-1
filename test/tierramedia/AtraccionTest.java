@@ -9,6 +9,36 @@ import org.junit.Test;
 public class AtraccionTest {
 
 	@Test
+	public void getNombre() {
+		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 2);
+		assertEquals("Mordor",atraccion.getNombre());
+	}
+
+	@Test
+	public void obtenerCosto() {
+		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 2);
+		assertEquals(10,atraccion.obtenerCosto(), 0.01);
+	}
+	
+	@Test
+	public void obtenerDuracion() {
+		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 2);
+		assertEquals(10,atraccion.obtenerDuracion(), 0.01);
+	}
+	
+	@Test
+	public void hayCupo() {
+		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 2);
+		assertTrue(atraccion.hayCupo());
+	}
+	
+	@Test
+	public void noHayCupo() {
+		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 0);
+		assertFalse(atraccion.hayCupo());
+	}
+	
+	@Test
 	public void restarCupo() {
 		Atraccion atraccion = new Atraccion("Mordor", 10, 10, 1);
 		assertTrue(atraccion.hayCupo());
