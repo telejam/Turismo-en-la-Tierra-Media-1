@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class PaquetePromociones {
 
-	private List<Promocion> promociones;
+	private List<Promocion> promociones= new ArrayList<Promocion>();
 	
 	public PaquetePromociones(List<Atraccion> lista) {
 		cargarPromociones(lista);

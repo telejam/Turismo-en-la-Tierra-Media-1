@@ -10,7 +10,9 @@ import java.util.Collections;
 public class PaqueteAtracciones {
     private List<Atraccion> Atracciones =  new ArrayList<Atraccion>();
     
-    public PaqueteAtracciones() {}
+    public PaqueteAtracciones() {
+    	this.cargarAtracciones();
+    }
     
     public List<Atraccion> getAtracciones() {
     	return this.Atracciones;
@@ -32,7 +34,7 @@ public class PaqueteAtracciones {
     		String linea = br.readLine();
     		while((linea != null)) {
     			//System.out.println(linea);
-    			Atracciones.add(linea2atraccion(linea));
+    			this.Atracciones.add(linea2atraccion(linea));
     			linea = br.readLine();
     		}
     	}
