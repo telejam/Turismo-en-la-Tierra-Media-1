@@ -53,4 +53,16 @@ public class AtraccionTest {
 		for (Atraccion unaAtraccion : recibida)
 			assertEquals(atraccion, unaAtraccion);
 	}
+
+	@Test
+	public void toStringTest() {
+		
+		Atraccion atraccion1 = new Atraccion("Moria", 10, 2, 2);
+		
+		String mensaje = "Atracción: Moria\n"
+				+ "-Duración: 2 horas \n"
+				+ "-Precio: 10 monedas de oro";
+		assertEquals(mensaje, atraccion1.toString());
+		
+	}
 }

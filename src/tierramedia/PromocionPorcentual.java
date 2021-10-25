@@ -30,6 +30,6 @@ public class PromocionPorcentual extends Promocion  {
 			listaAtracciones += "    -" + atraccion.getNombre() + ", " + f.format(atraccion.obtenerCosto()) + " monedas de oro\n";
 		}
 		return "Promoción: " + this.nombre + "\n-Atracciones incluidas: \n" + listaAtracciones +
-				"\n-Duración: " + f.format(this.obtenerDuracion()) + " horas \n-Precio con descuento: " + f.format(obtenerCosto()) + " monedas de oro";
+				"\n-Duración: " + f.format(this.obtenerDuracion()) + " horas \n-Precio con descuento: " + f.format(obtenerCosto()) + " monedas de oro\n";
 	}
 }
